@@ -33,3 +33,9 @@ variable "aws_region" {
   default     = "us-east-1"
   type        = string
 }
+
+variable "ami_id" {
+  description = "Optional AMI ID to override the default Amazon Linux 2023 AMI"
+  type        = string
+  default     = null
+}
