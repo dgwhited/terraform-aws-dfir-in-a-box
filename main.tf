@@ -31,7 +31,7 @@ data "aws_vpc" "default" {
 
 
 resource "aws_instance" "instance" {
-  ami           = data.aws_ami.ami.id
+  ami           = var.ami_id != null ? var.ami_id : data.aws_ami.ami.id
   instance_type = var.aws_instance_type
   vpc_security_group_ids = [
     aws_security_group.sg.id,
